@@ -9,54 +9,56 @@
         android:id="@+id/nav_home"
         android:name="xyz.lob.referenceofcomputerscience.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+
+        <action
+            android:id="@+id/action_nav_home_to_nav_postFragment2"
+            app:destination="@id/nav_postFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_calcSystemNumber"
+            app:destination="@id/nav_calcSystemNumber" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_scrollingFragment"
+            app:destination="@id/nav_scrollingFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_linux"
-        android:name="xyz.lob.referenceofcomputerscience.ui.gallery.GalleryFragment"
-        android:label="@string/menu_linux"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_windows"
-        android:name="xyz.lob.referenceofcomputerscience.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_windows"
-        tools:layout="@layout/fragment_slideshow" />
-    <fragment
-        android:id="@+id/nav_commputer"
-        android:name="xyz.lob.referenceofcomputerscience.ui.computer.Commputer"
-        android:label="@string/menu_computer"
-        tools:layout="@layout/commputer_fragment" />
-    <fragment
-        android:id="@+id/nav_formuls"
-        android:name="xyz.lob.referenceofcomputerscience.ui.formuls.FormulsFragment"
-        android:label="@string/menu_formuls"
-        tools:layout="@layout/formuls_fragment" />
-    <fragment
-        android:id="@+id/nav_glossary"
-        android:name="xyz.lob.referenceofcomputerscience.ui.Glossary.Glossary"
-        android:label="@string/menu_glossary"
-        tools:layout="@layout/glossary_fragment" />
-    <fragment
-        android:id="@+id/nav_web"
-        android:name="xyz.lob.referenceofcomputerscience.ui.web.web"
-        android:label="@string/menu_web"
-        tools:layout="@layout/web_fragment" />
-    <fragment
-        android:id="@+id/nav_logic"
-        android:name="xyz.lob.referenceofcomputerscience.ui.logic.LogicFragment"
-        android:label="@string/menu_logic"
-        tools:layout="@layout/logic_fragment" />
-    <fragment
-        android:id="@+id/nav_systemNumber"
-        android:name="xyz.lob.referenceofcomputerscience.ui.systemNumber.SystemNumberFragment"
+        android:id="@+id/nav_calcSystemNumber"
+        android:name="xyz.lob.referenceofcomputerscience.ui.systemNumberCalc.SystemNumberFragment"
         android:label="@string/menu_systemNumber"
-        tools:layout="@layout/system_number_fragment" />
+        tools:layout="@layout/system_number_fragment" >
+        <action
+            android:id="@+id/action_nav_calcSystemNumber_self"
+            app:destination="@id/nav_calcSystemNumber" />
+    </fragment>
     <fragment
-        android:id="@+id/postFragment"
-        android:name="xyz.lob.referenceofcomputerscience.recycle.PostFragment"
-        android:label="fragment_item_list"
-        tools:layout="@layout/fragment_item_list" />
-
-
+        android:id="@+id/nav_postFragment"
+        android:name="xyz.lob.referenceofcomputerscience.ui.recycle.PostsFragment"
+        tools:layout="@layout/fragment_item_list" >
+        <action
+            android:id="@+id/action_nav_postFragment_to_nav_scrollingFragment"
+            app:destination="@id/nav_scrollingFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:popEnterAnim="@android:anim/fade_in">
+            <argument
+                android:name="category"
+                android:defaultValue="cat" />
+            <argument
+                android:name="id"
+                android:defaultValue="0" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_scrollingFragment"
+        android:name="xyz.lob.referenceofcomputerscience.ui.post.ScrollingFragment"
+        tools:layout="@layout/fragment_scrolling" >
+        <argument
+            android:name="category"
+            app:argType="string"
+            android:defaultValue="cat" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>

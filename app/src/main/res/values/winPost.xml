@@ -1,0 +1,26 @@
+<resources>
+    <string-array name="winPostTitle">
+        <item>Test win post</item>
+        <item>Test win post 2</item>
+    </string-array>
+    <string-array name="winPostDetal">
+        <item>Подробнее прочитать внутри статьи</item>
+        <item>Bla bla blaa></item>
+    </string-array>
+    <string-array name="winPostText">
+        <item>@string/large_text</item>
+        <item>No text</item>
+    </string-array>
+    <string-array name="winPostImg">
+        <item>@drawable/fon</item>
+        <item>@drawable/fon</item>
+    </string-array>
+
+    <array name="winPosts">
+        <item>@array/winPostTitle</item>
+        <item>@array/winPostDetal</item>
+        <item>@array/winPostText</item>
+        <item>@array/winPostImg</item>
+    </array>
+
+</resources>

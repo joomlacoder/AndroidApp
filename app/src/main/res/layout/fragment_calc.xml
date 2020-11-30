@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.Group
+        app:constraint_referenced_ids="editTextNumber2,textView13"
+        style="@style/calcGroup" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:text="TextView"
+        style="@style/calcTextH1" />
+
+    <EditText
+        android:id="@+id/editTextNumber2"
+        style="@style/calcInput" />
+
+    <TableLayout style="@style/calcTable">
+
+        <TableRow style="@style/calcTableRow">
+
+            <TextView
+                android:id="@+id/textView14"
+                style="@style/calcTableRowLeft"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView15"
+                style="@style/calcTableRowRight"
+                android:text="TextView" />
+        </TableRow>
+
+        <TableRow style="@style/calcTableRow">
+
+            <TextView
+                android:id="@+id/textView16"
+                android:text="TextView"
+                style="@style/calcTableRowLeft" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:text="TextView"
+                style="@style/calcTableRowRight" />
+        </TableRow>
+
+        <TableRow style="@style/calcTableRow">
+
+            <TextView
+                android:id="@+id/textView18"
+                style="@style/calcTableRowLeft"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView19"
+                style="@style/calcTableRowRight"
+                android:text="TextView" />
+        </TableRow>
+
+        <TableRow style="@style/calcTableRow">
+
+            <TextView
+                android:id="@+id/textView20"
+                style="@style/calcTableRowLeft"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView21"
+                style="@style/calcTableRowRight"
+                android:text="TextView" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
