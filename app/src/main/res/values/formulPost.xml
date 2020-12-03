@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="formulPostTitle">
+        <item>Test formul post</item>
+        <item>Test formul post 2</item>
+    </string-array>
+    <string-array name="formulPostDetal">
+        <item>Подробнее прочитать внутри статьи</item>
+        <item>Bla bla blaa></item>
+    </string-array>
+    <string-array name="formulPostText">
+        <item>@string/large_text</item>
+        <item>No text</item>
+    </string-array>
+    <string-array name="formulPostImg">
+        <item>@drawable/fon</item>
+        <item>@drawable/fon</item>
+    </string-array>
+
+    <array name="formulPosts">
+        <item>@array/formulPostTitle</item>
+        <item>@array/formulPostDetal</item>
+        <item>@array/formulPostText</item>
+        <item>@array/formulPostImg</item>
+    </array>
+
+</resources>

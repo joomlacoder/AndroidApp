@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/grand_fon"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ui.systemNumberCalc.FragmentCalc">
 
     <androidx.constraintlayout.widget.Group
-        app:constraint_referenced_ids="editTextNumber2,textView13"
-        style="@style/calcGroup" />
+        style="@style/calcGroup"
+        app:constraint_referenced_ids="editTextNumber2,textView13" />
 
     <TextView
         android:id="@+id/textView13"
-        android:text="TextView"
-        style="@style/calcTextH1" />
+        style="@style/calcTextH1"
+        tools:text="TextView13" />
 
     <EditText
         android:id="@+id/editTextNumber2"
-        style="@style/calcInput" />
+        style="@style/calcInput"
+        android:autofillHints="Число"
+        tools:ignore="LabelFor" />
 
     <TableLayout style="@style/calcTable">
 
@@ -27,25 +32,25 @@
             <TextView
                 android:id="@+id/textView14"
                 style="@style/calcTableRowLeft"
-                android:text="TextView" />
+                tools:text="TextView" />
 
             <TextView
                 android:id="@+id/textView15"
                 style="@style/calcTableRowRight"
-                android:text="TextView" />
+                tools:text="TextView"  />
         </TableRow>
 
         <TableRow style="@style/calcTableRow">
 
             <TextView
                 android:id="@+id/textView16"
-                android:text="TextView"
-                style="@style/calcTableRowLeft" />
+                style="@style/calcTableRowLeft"
+                tools:text="TextView"  />
 
             <TextView
                 android:id="@+id/textView17"
-                android:text="TextView"
-                style="@style/calcTableRowRight" />
+                style="@style/calcTableRowRight"
+                tools:text="TextView"  />
         </TableRow>
 
         <TableRow style="@style/calcTableRow">
@@ -53,12 +58,12 @@
             <TextView
                 android:id="@+id/textView18"
                 style="@style/calcTableRowLeft"
-                android:text="TextView" />
+                tools:text="TextView"  />
 
             <TextView
                 android:id="@+id/textView19"
                 style="@style/calcTableRowRight"
-                android:text="TextView" />
+                tools:text="TextView"  />
         </TableRow>
 
         <TableRow style="@style/calcTableRow">
@@ -66,12 +71,12 @@
             <TextView
                 android:id="@+id/textView20"
                 style="@style/calcTableRowLeft"
-                android:text="TextView" />
+                tools:text="TextView"  />
 
             <TextView
                 android:id="@+id/textView21"
                 style="@style/calcTableRowRight"
-                android:text="TextView" />
+                tools:text="TextView"  />
         </TableRow>
     </TableLayout>
 

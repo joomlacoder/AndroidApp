@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pcPostTitle">
+        <item>Test pc post</item>
+        <item>Test pc post 2</item>
+    </string-array>
+    <string-array name="pcPostDetal">
+        <item>Подробнее прочитать внутри статьи</item>
+        <item>Bla bla blaa></item>
+    </string-array>
+    <string-array name="pcPostText">
+        <item>@string/large_text</item>
+        <item>No text</item>
+    </string-array>
+    <string-array name="pcPostImg">
+        <item>@drawable/fon</item>
+        <item>@drawable/fon</item>
+    </string-array>
+
+    <array name="pcPosts">
+        <item>@array/pcPostTitle</item>
+        <item>@array/pcPostDetal</item>
+        <item>@array/pcPostText</item>
+        <item>@array/pcPostImg</item>
+    </array>
+
+</resources>

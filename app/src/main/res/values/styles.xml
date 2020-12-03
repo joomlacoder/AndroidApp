@@ -81,12 +81,12 @@
         <item name="android:textAlignment">center</item>
     </style>
 
-    <style name="Widget.Theme.ReferenceOfComputerScience.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
+    <style name="Widget.Theme.ReferenceOfComputerScience.NoActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
         <item name="android:background">@color/black_overlay</item>
     </style>
 
     <style name="Widget.Theme.ReferenceOfComputerScience.ButtonBar.Fullscreen" parent="">
-        <item name="android:background">@color/black_overlay</item>
+        <item name="android:background">@color/light_blue_600</item>
         <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
 </resources>

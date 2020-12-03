@@ -11,23 +11,24 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 import xyz.lob.referenceofcomputerscience.R;
-import xyz.lob.referenceofcomputerscience.content.Content;
+import xyz.lob.referenceofcomputerscience.content.Post;
 
 public class MyPostRecyclerViewAdapter extends RecyclerView.Adapter<MyPostRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Content.Post> mValues;
-    private OnSelectedRecyclerItemListener recOnClicklistener;
-    private Context context;
+    private final List<Post> mValues;
+    private final OnSelectedRecyclerItemListener recOnClicklistener;
 
-    public MyPostRecyclerViewAdapter(List<Content.Post> mValues, OnSelectedRecyclerItemListener recOnClicklistener, Context context) {
+    public MyPostRecyclerViewAdapter(List<Post> mValues, OnSelectedRecyclerItemListener recOnClicklistener, Context context) {
         this.mValues = mValues;
         this.recOnClicklistener = recOnClicklistener;
-        this.context = context;
     }
 
+    @NotNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_item, parent, false));
@@ -44,7 +45,7 @@ public class MyPostRecyclerViewAdapter extends RecyclerView.Adapter<MyPostRecycl
         return mValues.size();
     }
 
-    public void updateList(List<Content.Post> posts){
+    public void updateList(List<Post> posts){
         mValues.clear();
         mValues.addAll(posts);
         notifyDataSetChanged();
@@ -59,18 +60,19 @@ public class MyPostRecyclerViewAdapter extends RecyclerView.Adapter<MyPostRecycl
         public ViewHolder(@NonNull View view) {
             super(view);
             this.view = view;
-            titleView = (TextView) view.findViewById(R.id.itemCardTitle);
-            detaleView = (TextView) view.findViewById(R.id.itemCardText);
-            imageView =(ImageView)view.findViewById(R.id.itemCardLogo);
+            titleView = view.findViewById(R.id.itemCardTitle);
+            detaleView = view.findViewById(R.id.itemCardText);
+            imageView = view.findViewById(R.id.itemCardLogo);
             view.setOnClickListener(this);
         }
 
-        public void setData(Content.Post post){
+        public void setData(Post post){
             titleView.setText(post.getTitle());
-            imageView.setImageResource(post.getImg());
+            imageView.setImageDrawable(post.getImg());
             detaleView.setText(post.getDetails());
         }
 
+        @NotNull
         @Override
         public String toString() {
             return super.toString() + " '" + detaleView.getText() + "'";

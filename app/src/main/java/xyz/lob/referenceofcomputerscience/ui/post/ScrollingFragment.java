@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spanned;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,14 +16,14 @@ import androidx.annotation.Nullable;
 import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 
+import xyz.lob.referenceofcomputerscience.App;
 import xyz.lob.referenceofcomputerscience.R;
-import xyz.lob.referenceofcomputerscience.content.Content;
+import xyz.lob.referenceofcomputerscience.content.Post;
 
 public class ScrollingFragment extends Fragment {
     private String cat;
     private int id;
-    private Content.Post post;
-//    private ScrolingFragmentModel mViewModel;
+    private Post post;
 
     @Override
     public void onCreate(@Nullable Bundle bundle) {
@@ -30,43 +31,29 @@ public class ScrollingFragment extends Fragment {
         if (getArguments() != null) {
             id = getArguments().getInt("id");
             cat = getArguments().getString("category");
-            post = Content.getPost(cat, id);
+            post = App.getInstance().getContent().getPost(cat, id);
         }
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-//        mViewModel = new ViewModelProvider(this, new ScrolingModelFactory(getActivity().getApplication(), savedInstanceState.getString("category"), savedInstanceState.getInt("id"))).get(ScrolingFragmentModel.class);
+
         View view = inflater.inflate(R.layout.fragment_scrolling, container, false);
-//        Spanned textSpan = Html.fromHtml(getContext().getString(R.string.large_text), HtmlCompat.FROM_HTML_MODE_LEGACY, new Html.ImageGetter() {
-//            @Override public Drawable getDrawable(String source) {
-//                Drawable drawFromPath;
-//                int path =
-//                        getActivity().getResources().getIdentifier(source, "drawable",
-//                                getActivity().getApplicationContext().getPackageName());
-//                drawFromPath = getActivity().getResources().getDrawable(path);
-//                drawFromPath.setBounds(0, 0, drawFromPath.getIntrinsicWidth(),
-//                        drawFromPath.getIntrinsicHeight());
-//                return drawFromPath;
-//            }
-//        }, null);
-        Spanned textSpan = Html.fromHtml(getResources().getString(post.getContent()), HtmlCompat.FROM_HTML_MODE_LEGACY, new Html.ImageGetter() {
-            @Override
-            public Drawable getDrawable(String source) {
-                Drawable drawFromPath;
-                int path =
-                        getActivity().getResources().getIdentifier(source, "drawable",
-                                getActivity().getApplicationContext().getPackageName());
-                drawFromPath = getActivity().getResources().getDrawable(path);
-                drawFromPath.setBounds(0, 0, drawFromPath.getIntrinsicWidth(),
-                        drawFromPath.getIntrinsicHeight());
-                return drawFromPath;
-            }
+        Log.e("scrol", post + " " + post.getText());
+        Spanned textSpan = Html.fromHtml(post.getText(), HtmlCompat.FROM_HTML_MODE_LEGACY, source -> {
+            Drawable drawFromPath;
+            int path =
+                    getActivity().getResources().getIdentifier(source, "drawable",
+                            getActivity().getApplicationContext().getPackageName());
+            drawFromPath = getActivity().getResources().getDrawable(path);
+            drawFromPath.setBounds(0, 0, drawFromPath.getIntrinsicWidth(),
+                    drawFromPath.getIntrinsicHeight());
+            return drawFromPath;
         }, null);
 
         ((TextView) view.findViewById(R.id.scrolingTextView)).setText(textSpan);
-        ((ImageView) view.findViewById(R.id.scrolingImageView)).setImageResource(post.getImg());
+        ((ImageView) view.findViewById(R.id.scrolingImageView)).setImageDrawable(post.getImg());
         return view;
     }
 

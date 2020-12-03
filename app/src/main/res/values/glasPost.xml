@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="glasPostTitle">
+        <item>"Test glas post"</item>
+        <item>"est glas post 2"</item>
+    </string-array>
+    <string-array name="glasPostDetal">
+        <item>Подробнее прочитать внутри статьи</item>
+        <item>Bla bla blaa</item>
+    </string-array>
+    <integer-array name="glasPostText">
+        <item>@string/large_text</item>
+        <item>@string/app_name</item>
+    </integer-array>
+
+    <array name="glasPostImg">
+        <item>@drawable/fon</item>
+        <item>@drawable/fon</item>
+    </array>
+
+    <array name="glasPosts">
+        <item>@array/glasPostTitle</item>
+        <item>@array/glasPostDetal</item>
+        <item>@array/glasPostText</item>
+        <item>@array/glasPostImg</item>
+    </array>
+
+</resources>

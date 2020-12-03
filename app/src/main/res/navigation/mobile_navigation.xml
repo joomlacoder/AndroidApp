@@ -26,11 +26,7 @@
         android:id="@+id/nav_calcSystemNumber"
         android:name="xyz.lob.referenceofcomputerscience.ui.systemNumberCalc.SystemNumberFragment"
         android:label="@string/menu_systemNumber"
-        tools:layout="@layout/system_number_fragment" >
-        <action
-            android:id="@+id/action_nav_calcSystemNumber_self"
-            app:destination="@id/nav_calcSystemNumber" />
-    </fragment>
+        tools:layout="@layout/fragment_calc"/>
     <fragment
         android:id="@+id/nav_postFragment"
         android:name="xyz.lob.referenceofcomputerscience.ui.recycle.PostsFragment"

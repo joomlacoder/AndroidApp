@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="linuxPostTitle">
+        <item>Test linux post</item>
+        <item>Test linux post 2</item>
+    </string-array>
+    <string-array name="linuxPostDetal">
+        <item>Подробнее прочитать внутри статьи</item>
+        <item>Bla bla blaa></item>
+    </string-array>
+    <string-array name="linuxPostText">
+        <item>@string/large_text</item>
+        <item>No text</item>
+    </string-array>
+    <string-array name="linuxPostImg">
+        <item>@drawable/fon</item>
+        <item>@drawable/fon</item>
+    </string-array>
+
+    <array name="linuxPosts">
+        <item>@array/linuxPostTitle</item>
+        <item>@array/linuxPostDetal</item>
+        <item>@array/linuxPostText</item>
+        <item>@array/linuxPostImg</item>
+    </array>
+
+</resources>

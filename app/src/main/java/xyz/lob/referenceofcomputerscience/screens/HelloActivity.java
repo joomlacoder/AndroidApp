@@ -1,4 +1,4 @@
-package xyz.lob.referenceofcomputerscience;
+package xyz.lob.referenceofcomputerscience.screens;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -18,6 +18,8 @@ import android.widget.ImageView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import xyz.lob.referenceofcomputerscience.R;
+
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
@@ -26,6 +28,7 @@ public class HelloActivity extends AppCompatActivity {
     private SensorManager sensorManager;
     private Sensor sensor;
     private ImageView helloLogo;
+    private ImageView helloLogo2;
     private SensorEventListener sensorEventListener;
     private volatile boolean isTouch = false;
     /**
@@ -68,43 +71,30 @@ public class HelloActivity extends AppCompatActivity {
     private final Runnable mShowPart2Runnable = new Runnable() {
         @Override
         public void run() {
-            // Delayed display of UI elements
-            ActionBar actionBar = getSupportActionBar();
-            if (actionBar != null) {
-                //actionBar.show();
-            }
             mControlsView.setVisibility(View.VISIBLE);
         }
     };
     private boolean mVisible;
-    private final Runnable mHideRunnable = new Runnable() {
-        @Override
-        public void run() {
-            hide();
-        }
-    };
+    private final Runnable mHideRunnable = this::hide;
     /**
      * Touch listener to use for in-layout UI controls to delay hiding the
      * system UI. This is to prevent the jarring behavior of controls going away
      * while interacting with activity UI.
      */
-    private final View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
-        @Override
-        public boolean onTouch(View view, MotionEvent motionEvent) {
-            switch (motionEvent.getAction()) {
-                case MotionEvent.ACTION_DOWN:
-                    if (AUTO_HIDE) {
-                        delayedHide(AUTO_HIDE_DELAY_MILLIS);
-                    }
-                    break;
-                case MotionEvent.ACTION_UP:
-                    view.performClick();
-                    break;
-                default:
-                    break;
-            }
-            return false;
+    private final View.OnTouchListener mDelayHideTouchListener = (view, motionEvent) -> {
+        switch (motionEvent.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                if (AUTO_HIDE) {
+                    delayedHide(AUTO_HIDE_DELAY_MILLIS);
+                }
+                break;
+            case MotionEvent.ACTION_UP:
+                view.performClick();
+                break;
+            default:
+                break;
         }
+        return false;
     };
 
     @Override
@@ -119,7 +109,9 @@ public class HelloActivity extends AppCompatActivity {
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = findViewById(R.id.fullscreen_content);
         helloLogo = findViewById(R.id.imageHelloLogo);
+        helloLogo2 = findViewById(R.id.imageHelloLogo2);
         helloLogo.startAnimation(logoAnim);
+        helloLogo2.startAnimation(logoAnim);
         mControlsView.startAnimation(textAnim);
         mContentView.startAnimation(alphaAnim);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -143,6 +135,7 @@ public class HelloActivity extends AppCompatActivity {
                     orientations[i] = (float) (Math.toDegrees(orientations[i]));
                 }
                 helloLogo.setRotation(-orientations[2]);
+                helloLogo2.setRotation(orientations[2]);
             }
 
             @Override
@@ -154,24 +147,18 @@ public class HelloActivity extends AppCompatActivity {
         startMainActivity();
 
         // Set up the user interaction to manually show or hide the system UI.
-        mContentView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                isTouch = true;
-                toggle();
-            }
+        mContentView.setOnClickListener(view -> {
+            isTouch = true;
+            toggle();
         });
 
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
         findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
-        findViewById(R.id.dummy_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HelloActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
+        findViewById(R.id.dummy_button).setOnClickListener(v -> {
+            Intent intent = new Intent(HelloActivity.this, MainActivity.class);
+            startActivity(intent);
         });
 
     }
@@ -247,19 +234,18 @@ public class HelloActivity extends AppCompatActivity {
     }
 
     private void startMainActivity() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(10000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                if (!isTouch) {
-                    Intent intent = new Intent(HelloActivity.this, MainActivity.class);
-                    startActivity(intent);
-                }
-            }
-        }).start();
+        new Thread(this::run).start();
+    }
+
+    private void run() {
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if (!isTouch) {
+            Intent intent = new Intent(HelloActivity.this, MainActivity.class);
+            startActivity(intent);
+        }
     }
 }

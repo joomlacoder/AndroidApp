@@ -1,7 +1,6 @@
-package xyz.lob.referenceofcomputerscience;
+package xyz.lob.referenceofcomputerscience.screens;
 
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -20,6 +19,8 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.HashMap;
 import java.util.Map;
 
+import xyz.lob.referenceofcomputerscience.GoItemMenu;
+import xyz.lob.referenceofcomputerscience.R;
 import xyz.lob.referenceofcomputerscience.ui.recycle.PostsFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -96,11 +97,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toolbar.setTitle(title);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

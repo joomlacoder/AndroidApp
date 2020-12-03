@@ -16,8 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import xyz.lob.referenceofcomputerscience.App;
 import xyz.lob.referenceofcomputerscience.R;
-import xyz.lob.referenceofcomputerscience.content.Content;
+import xyz.lob.referenceofcomputerscience.content.Post;
 
 
 public class PostsFragment extends Fragment implements OnSelectedRecyclerItemListener {
@@ -25,11 +26,11 @@ public class PostsFragment extends Fragment implements OnSelectedRecyclerItemLis
     public static final String ARG_COLUMN_COUNT = "column-count";
     public static final String ARG_CATEGORY = "category";
 
-    private String category;
+    private String category = "";
     private int mColumnCount = 1;
 
     private MyPostRecyclerViewAdapter adapter;
-    private List<Content.Post> posts = new ArrayList<>();
+    private List<Post> posts = new ArrayList<>();
 
     @Override
     public void onSelectedRecyclerItem(int id) {
@@ -48,7 +49,7 @@ public class PostsFragment extends Fragment implements OnSelectedRecyclerItemLis
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
             category = getArguments().getString(ARG_CATEGORY);
         }
-        posts = Content.makeCategory(category);
+        posts = App.getInstance().getContent().makeCategory(category);
         adapter = new MyPostRecyclerViewAdapter(posts, this, getActivity().getApplicationContext());
     }
 

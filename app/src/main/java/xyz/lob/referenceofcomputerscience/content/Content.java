@@ -1,6 +1,8 @@
 package xyz.lob.referenceofcomputerscience.content;
 
-import android.util.Log;
+import android.app.Application;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,17 +12,15 @@ import xyz.lob.referenceofcomputerscience.R;
 
 public class Content {
 
-    private static final Content content = new Content();
-    private List<Post> posts = new ArrayList<Post>();
-    private Content() {
-    }
+    private final List<Post> posts = new ArrayList<>();
 
     private enum Category{
-        WIN("winPost", "Windows"), LINUX("linPost", "Linux"),
+        WIN("winPost", "Windows"), LINUX("linuxPost", "Linux"),
         NET("netPost", "Сети"), PC("pcPost", "Компоненты пк"),
-        LOGIC("logicPost", "Алгебра логики"), FORMULS("formulsPost",  "Основные формулы"),
+        LOGIC("logicPost", "Алгебра логики"), FORMULS("formulPost",  "Основные формулы"),
         GLAS("glasPost", "Глоссарий");
-        private String arrayName, title;
+        private final String arrayName;
+        private final String title;
 
         Category(String arrayName, String title){
             this.arrayName = arrayName;
@@ -29,33 +29,44 @@ public class Content {
         public String getArray(){return arrayName;}
         public static Category getCategoryEnum(String title){
             Category c = null;
-            //Log.e("values", Category.values().length + "");
             for (Category value : Category.values()) {
-                //Log.e("for", value.title);
                    c = value.title.equals(title) ? value: c;
             }
             return c;
         }
     }
 
-    public static Post getPost(String cat, int id){
-        return content.posts.get(id);
+    public Post getPost(String cat, int id){
+        makeCategory(cat);
+        return posts.get(id);
     }
-    public static List<Post> makeCategory(String cat){
-        Log.e("qw",Category.getCategoryEnum(cat).getArray() + " " + cat);
-//        List<Post> posts = new ArrayList<>();
-//        TypedArray typedArray = Resources.getSystem().obtainTypedArray(R.array.winPosts);
-//        int n = typedArray.length();
-//        String[][] array = new String[n][];
-//        for (int i = 0; i < n; ++i) {
-//            int id = typedArray.getResourceId(i, 0);
-//            array[i] = Resources.getSystem().getStringArray(id);
-//            posts.add(content.createItem(i));
-//        }
-//        typedArray.recycle();
-        content.posts.add(new Post("w",R.string.large_text, "2", R.drawable.fon));
-       // content.posts.addAll(posts);
-        return content.posts;
+
+    public Post getPost(int id){
+        return posts.get(id);
+    }
+
+    public Application a;
+    public Content(Application application){
+        a=application;
+    }
+
+    public List<Post> makeCategory(String cat){
+        List<Post> posts = new ArrayList<>();
+
+        String[] postTitles = a.getResources().getStringArray(R.array.glasPostTitle);
+        String[] postConteents = a.getResources().getStringArray(R.array.glasPostText);
+        String[] postDetailds = a.getResources().getStringArray(R.array.glasPostDetal);
+        TypedArray typedArray = a.getResources().obtainTypedArray(R.array.glasPostImg);
+        int n = typedArray.length();
+        Drawable[] postImgs = new Drawable[n];
+        for (int i = 0; i < n; ++i){
+            postImgs[i] = a.getDrawable(typedArray.getResourceId(i, 0));
+        }
+        typedArray.recycle();
+
+        posts.add(new Post(postTitles[1],postConteents[1], postDetailds[1], postImgs[1]));
+        this.posts.addAll(posts);
+        return posts;
     }
 
     private String makeDetails(int position) {
@@ -67,39 +78,4 @@ public class Content {
         return builder.toString();
     }
 
-
-    public static class Post {
-        public final String title;
-        public final int content;
-        public final String details;
-        public final int img;
-
-        public Post(String title, int content, String details, int img) {
-            this.title = title;
-            this.content = content;
-            this.details = details;
-            this.img = img;
-        }
-
-        public String getTitle() {
-            return title;
-        }
-
-        public int getContent() {
-            return content;
-        }
-
-        public String getDetails() {
-            return details;
-        }
-
-        public int getImg() {
-            return img;
-        }
-
-        @Override
-        public String toString() {
-            return content + "";
-        }
-    }
 }

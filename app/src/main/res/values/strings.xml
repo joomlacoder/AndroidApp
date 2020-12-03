@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ваша программа сломанилась :(</string>
+    <string name="app_name">Справочник по информатике</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Справочник по информатике</string>
@@ -119,6 +119,6 @@
         ]]>
     </string>
     <string name="title_activity_hello">FullscreenActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="dummy_button">Продолжить</string>
+    <string name="dummy_content">Справочник\n ИТ</string>
 </resources>
