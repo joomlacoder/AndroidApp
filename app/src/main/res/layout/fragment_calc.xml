@@ -17,12 +17,16 @@
     <TextView
         android:id="@+id/textView13"
         style="@style/calcTextH1"
+        android:textAlignment="center"
+        android:textSize="20sp"
         tools:text="TextView13" />
 
     <EditText
         android:id="@+id/editTextNumber2"
         style="@style/calcInput"
-        android:autofillHints="Число"
+        android:layout_width="wrap_content"
+        android:hint="Введите Число в 10 системе"
+        android:inputType="numberDecimal"
         tools:ignore="LabelFor" />
 
     <TableLayout style="@style/calcTable">
@@ -66,18 +70,6 @@
                 tools:text="TextView"  />
         </TableRow>
 
-        <TableRow style="@style/calcTableRow">
-
-            <TextView
-                android:id="@+id/textView20"
-                style="@style/calcTableRowLeft"
-                tools:text="TextView"  />
-
-            <TextView
-                android:id="@+id/textView21"
-                style="@style/calcTableRowRight"
-                tools:text="TextView"  />
-        </TableRow>
     </TableLayout>
 
 </LinearLayout>
