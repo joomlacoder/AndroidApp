@@ -20,11 +20,9 @@ public class App extends Application {
         super.onCreate();
         instance = this;
         content = new Content(this);
-        Log.e("jjjjjjjjjjjjjjjjjjjjjjjj", content.toString());
     }
 
     public Content getContent() {
-       Log.e("nnnnnnnnnnnnnnnnnnnnn", content.toString());
         return content;
     }
 }

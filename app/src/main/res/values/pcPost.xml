@@ -12,10 +12,10 @@
         <item>@string/large_text</item>
         <item>No text</item>
     </string-array>
-    <string-array name="pcPostImg">
+    <array name="pcPostImg">
         <item>@drawable/fon</item>
         <item>@drawable/fon</item>
-    </string-array>
+    </array>
 
     <array name="pcPosts">
         <item>@array/pcPostTitle</item>

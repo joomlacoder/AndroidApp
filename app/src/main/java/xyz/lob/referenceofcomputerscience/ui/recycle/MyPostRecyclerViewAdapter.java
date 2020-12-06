@@ -20,8 +20,8 @@ import xyz.lob.referenceofcomputerscience.content.Post;
 
 public class MyPostRecyclerViewAdapter extends RecyclerView.Adapter<MyPostRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Post> mValues;
-    private final OnSelectedRecyclerItemListener recOnClicklistener;
+    private List<Post> mValues;
+    private OnSelectedRecyclerItemListener recOnClicklistener;
 
     public MyPostRecyclerViewAdapter(List<Post> mValues, OnSelectedRecyclerItemListener recOnClicklistener, Context context) {
         this.mValues = mValues;

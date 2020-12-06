@@ -68,25 +68,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         mapMenuItem.get(item.getItemId()).goItemMenu(item.getTitle().toString());
-//        switch (item.getItemId()) {
-//            case R.id.nav_home:{
-//                navController.navigate(R.id.nav_home);
-//                break;
-//            }
-//            case R.id.nav_re_linux: {
-//                navController.navigate(R.id.nav_postFragment);
-//                toolbar.setTitle("Linux");
-//                break;
-//            }
-//            case R.id.nav_re_win: {
-//                navController.navigate(R.id.nav_postFragment);
-//                toolbar.setTitle("Windows");
-//                break;
-//            }
-//            case R.id.nav_re_systemNumber:{
-//                navController.navigate(R.id.nav_calcSystemNumber);
-//            }
-//        }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }

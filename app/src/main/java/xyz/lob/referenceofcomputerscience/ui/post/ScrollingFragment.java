@@ -18,12 +18,10 @@ import androidx.fragment.app.Fragment;
 
 import xyz.lob.referenceofcomputerscience.App;
 import xyz.lob.referenceofcomputerscience.R;
-import xyz.lob.referenceofcomputerscience.content.Post;
 
 public class ScrollingFragment extends Fragment {
     private String cat;
     private int id;
-    private Post post;
 
     @Override
     public void onCreate(@Nullable Bundle bundle) {
@@ -31,17 +29,14 @@ public class ScrollingFragment extends Fragment {
         if (getArguments() != null) {
             id = getArguments().getInt("id");
             cat = getArguments().getString("category");
-            post = App.getInstance().getContent().getPost(cat, id);
         }
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_scrolling, container, false);
-        Log.e("scrol", post + " " + post.getText());
-        Spanned textSpan = Html.fromHtml(post.getText(), HtmlCompat.FROM_HTML_MODE_LEGACY, source -> {
+        Spanned textSpan = Html.fromHtml(App.getInstance().getContent().getPost(cat,id).getText(), HtmlCompat.FROM_HTML_MODE_LEGACY, source -> {
             Drawable drawFromPath;
             int path =
                     getActivity().getResources().getIdentifier(source, "drawable",
@@ -51,9 +46,11 @@ public class ScrollingFragment extends Fragment {
                     drawFromPath.getIntrinsicHeight());
             return drawFromPath;
         }, null);
-
+        Log.e("test", "go" + cat + " " + id);
         ((TextView) view.findViewById(R.id.scrolingTextView)).setText(textSpan);
-        ((ImageView) view.findViewById(R.id.scrolingImageView)).setImageDrawable(post.getImg());
+        ((ImageView) view.findViewById(R.id.scrolingImageView)).setImageDrawable(App.getInstance().getContent().getPost(cat,id).getImg());
+
+        getActivity().setTitle(App.getInstance().getContent().getPost(id).title);
         return view;
     }
 

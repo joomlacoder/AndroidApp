@@ -121,4 +121,10 @@
     <string name="title_activity_hello">FullscreenActivity</string>
     <string name="dummy_button">Продолжить</string>
     <string name="dummy_content">Справочник\n ИТ</string>
+    <string-array name="num">
+        <item>2</item>
+        <item>8</item>
+        <item>10</item>
+        <item>16</item>
+    </string-array>
 </resources>

@@ -3,10 +3,10 @@ package xyz.lob.referenceofcomputerscience.content;
 import android.graphics.drawable.Drawable;
 
 public class Post {
-    public final String title;
-    public final String content;
-    public final String details;
-    public final Drawable img;
+    public  String title;
+    public  String content;
+    public  String details;
+    public  Drawable img;
 
     public Post(String title, String content, String details, Drawable img) {
         this.title = title;

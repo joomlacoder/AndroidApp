@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -25,8 +24,9 @@ public class PostsFragment extends Fragment implements OnSelectedRecyclerItemLis
 
     public static final String ARG_COLUMN_COUNT = "column-count";
     public static final String ARG_CATEGORY = "category";
+    public static final String ARG_ID = "id";
 
-    private String category = "";
+    private String category;
     private int mColumnCount = 1;
 
     private MyPostRecyclerViewAdapter adapter;
@@ -35,11 +35,9 @@ public class PostsFragment extends Fragment implements OnSelectedRecyclerItemLis
     @Override
     public void onSelectedRecyclerItem(int id) {
         Bundle args = new Bundle();
-        args.putString("category", "test");
-        args.putInt("id", id);
+        args.putString(ARG_CATEGORY, category);
+        args.putInt(ARG_ID, id);
         Navigation.findNavController(this.getView()).navigate(R.id.action_nav_postFragment_to_nav_scrollingFragment, args);
-        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle(" " + id);
     }
 
     @Override
