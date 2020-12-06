@@ -65,12 +65,12 @@ public class Content {
         Object[][] arrayPosts = new Object[n][];
         for (int i = 0; i < n; ++i) {
             int id = typedArrayPosts.getResourceId(i, 0);
-            if(i < 3) arrayPosts[i] = a.getResources().getStringArray(id);
+            if (i < 3) arrayPosts[i] = a.getResources().getStringArray(id);
             else {
                 TypedArray typedArrayImg = a.getResources().obtainTypedArray(id);
                 arrayPosts[i] = new Object[arrayPosts[0].length];
-                for(int j = 0; j < arrayPosts[0].length; ++j){
-                    arrayPosts[3][j] = a.getDrawable(typedArrayImg.getResourceId(j,0));
+                for (int j = 0; j < arrayPosts[0].length; ++j) {
+                    arrayPosts[3][j] = a.getDrawable(typedArrayImg.getResourceId(j, 0));
                 }
                 typedArrayImg.recycle();
             }
@@ -81,7 +81,7 @@ public class Content {
 
         for (int i = 0; i < arrayPosts[0].length; ++i) {
             Log.e("int", " " + i);
-            posts.add(new Post((String) arrayPosts[0][i], (String) arrayPosts[2][i], (String) arrayPosts[1][i], (Drawable) arrayPosts[3][i]));
+            posts.add(new Post((String) arrayPosts[0][i], (String) arrayPosts[2][i], makeDetails((String) arrayPosts[1][i]), (Drawable) arrayPosts[3][i]));
         }
 
         this.posts.addAll(posts);
@@ -90,12 +90,10 @@ public class Content {
         return this.posts;
     }
 
-    private String makeDetails(int position) {
+    private String makeDetails(String string) {
         StringBuilder builder = new StringBuilder();
-        builder.append("Details about Item: ").append(position);
-        for (int i = 0; i < position; i++) {
-            builder.append("\nMore details information here.");
-        }
+        builder.append(string);
+        builder.append("\n\nЧитать далее...");
         return builder.toString();
     }
 

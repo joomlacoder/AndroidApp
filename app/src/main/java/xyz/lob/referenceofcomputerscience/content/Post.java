@@ -24,7 +24,7 @@ public class Post {
     }
 
     public String getDetails() {
-        return details;
+        return details + "";
     }
 
     public Drawable getImg() {

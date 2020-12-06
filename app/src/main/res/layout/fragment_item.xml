@@ -15,7 +15,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/itemCardLogo"
@@ -23,44 +23,50 @@
             android:layout_height="90dp"
             android:contentDescription="@string/contentDescriptionimg"
             android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/itemCardTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/itemCardTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="4dp"
-            android:textSize="24sp"
+            android:layout_marginRight="10dp"
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.087"
+            app:layout_constraintBottom_toTopOf="@+id/itemCardText"
+            app:layout_constraintEnd_toStartOf="@+id/itemCardGoImg"
             app:layout_constraintStart_toEndOf="@+id/itemCardLogo"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Title" />
 
         <TextView
             android:id="@+id/itemCardText"
-            android:layout_width="240dp"
-            android:layout_height="41dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/itemCardGoImg"
-            app:layout_constraintHorizontal_bias="0.766"
             app:layout_constraintStart_toEndOf="@+id/itemCardLogo"
-            app:layout_constraintTop_toTopOf="@+id/itemCardTitle"
+            app:layout_constraintTop_toBottomOf="@+id/itemCardTitle"
             tools:text="Content" />
 
         <ImageView
             android:id="@+id/itemCardGoImg"
-            android:layout_width="37dp"
+            android:layout_width="38dp"
             android:layout_height="38dp"
-            android:layout_marginTop="24dp"
             android:layout_marginEnd="4dp"
             android:contentDescription="@string/contentDescriptionimg"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/itemCardText"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/item_card_go_img" />
     </androidx.constraintlayout.widget.ConstraintLayout>

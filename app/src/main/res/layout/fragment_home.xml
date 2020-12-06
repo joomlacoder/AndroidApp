@@ -7,17 +7,6 @@
 
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        tools:text="Cправочник" />
-
     <SearchView android:layout_height="wrap_content"
         android:layout_width="match_parent" >
 
@@ -29,7 +18,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:gravity="center_horizontal"
-        android:text="Пример текста" />
+        android:text="Можете посмотреть"
+        android:textSize="18sp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -63,8 +53,7 @@
                         android:layout_width="150dp"
                         android:layout_height="150dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/fon"
-                        tools:src="@tools:sample/avatars" />
+                        android:src="@drawable/img_home_win" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -80,8 +69,7 @@
                         android:id="@+id/imageView2"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:src="@drawable/fon"
-                        tools:src="@tools:sample/avatars" />
+                        android:src="@drawable/img_home_net" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -96,8 +84,8 @@
                         android:id="@+id/imageView3"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:src="@drawable/fon"
-                        tools:src="@tools:sample/avatars" />
+                        android:src="@drawable/img_home_glass"
+                         />
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
 
@@ -121,9 +109,16 @@
                         android:id="@+id/imageView4"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:src="@drawable/fon"
+                        android:src="@drawable/unit_for_pc"
                         android:foregroundGravity="center_horizontal"
-                        tools:src="@tools:sample/avatars" />
+                        />
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Комоненты Пк"
+                        android:textAlignment="center"
+                        android:textSize="16sp" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -138,8 +133,7 @@
                         android:id="@+id/imageView5"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:src="@drawable/fon"
-                        tools:src="@tools:sample/avatars" />
+                        android:src="@drawable/img_home_linux" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -154,8 +148,7 @@
                         android:id="@+id/imageView6"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:src="@drawable/fon"
-                        tools:src="@tools:sample/avatars" />
+                        android:src="@drawable/img_home_calc" />
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
 
@@ -165,7 +158,7 @@
     <View
         android:id="@+id/divider2"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="3dp"
         android:layout_margin="10dp"
         android:background="?android:attr/listDivider" />
 
@@ -175,7 +168,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:gravity="center_horizontal"
-        android:text="Пример текста" />
+        android:text="Избраное"
+        android:textSize="18sp" />
 
     <HorizontalScrollView
         android:layout_width="match_parent"
