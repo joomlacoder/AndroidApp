@@ -24,4 +24,12 @@
         <item>@array/formulPostImg</item>
     </array>
 
+
+    <string name="testTest">Test test</string>
+    <string name="large_textttest">
+        <![CDATA[
+
+         ]]>
+    </string>
+
 </resources>

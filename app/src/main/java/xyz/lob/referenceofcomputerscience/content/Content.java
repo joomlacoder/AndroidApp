@@ -86,21 +86,7 @@ public class Content {
 
         this.posts.addAll(posts);
 
-//        TypedArray typedArrayImg = a.getResources().obtainTypedArray(R.array.glasPostImg);
-//        int n = typedArrayImg.length();
-//        Drawable[] postImgs = new Drawable[n];
-//        for (int i = 0; i < n; ++i) {
-//            postImgs[i] = a.getDrawable(typedArrayImg.getResourceId(i, 0));
-//        }
-//        typedArrayImg.recycle();
-//        String[] postTitles = a.getResources().getStringArray(R.array.glasPostTitle);
-//        String[] postConteents = a.getResources().getStringArray(R.array.glasPostText);
-//        String[] postDetailds = a.getResources().getStringArray(R.array.glasPostDetal);
-//
-//
-//        posts.add(new Post(postTitles[1], postConteents[1], postDetailds[1], postImgs[1]));
-//        this.posts.addAll(posts);
-//
+
         return this.posts;
     }
 

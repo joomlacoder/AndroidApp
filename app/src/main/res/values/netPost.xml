@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="netPostTitle">
-        <item>Test net post</item>
+        <item>Проброс портов</item>
         <item>Test net post 2</item>
     </string-array>
     <string-array name="netPostDetal">
-        <item>Подробнее прочитать внутри статьи</item>
+        <item>Настройка портов</item>
         <item>Bla bla blaa></item>
     </string-array>
     <string-array name="netPostText">
-        <item>@string/large_text</item>
+        <item>@string/textPort</item>
         <item>No text</item>
     </string-array>
     <array name="netPostImg">
-        <item>@drawable/fon</item>
+        <item>@drawable/net_port</item>
         <item>@drawable/fon</item>
     </array>
 
@@ -23,5 +23,41 @@
         <item>@array/netPostText</item>
         <item>@array/netPostImg</item>
     </array>
+
+
+
+    <string name="textPort">
+        <![CDATA[
+<h1>1. Создание виртуального IP.</h1>
+<p>1.1. Переходим: Policy & Objects —> Virtual IPs;</p>
+<p>1.2. Нажимаем кнопку : Create New —> Virtual IP;</p>
+<p>1.3. В открывшейся форме заполняем поля:</p>
+<p>- Name - Любое название;</p>
+<p>- Interface - Внешний интерфейс;</p>
+<p>- External IP Address/Range - IP-адрес внешнего интерфейса;</p>
+<p>- Mapped IP Address/Range - IP-адрес ПК на который будет проброс порта(ов);</p>
+<p>- Включаем переключатель Port Forwarding;</p>
+<p>- Protocol - Указываем протокол;</p>
+<p>- External Service Port - Порт который будет пробрасываться;</p>
+<p>- External Service Port - Порт на ПК;</p>
+<p>- Нажимаем ОК;</p>
+<h1>2. Добавление службы.</h1>
+<p>2.1. Переходим: Policy & Objects —> Services;</p>
+<p>2.2. В открывшейся таблице проверяем наличие службы с портом который пробрасываем; Если порта нет, тогда необходимо создать новый порт. Если порт есть в таблице, тогда переходим к следующему пункту.</p>
+<h1>3. Добавление правила.</h1>
+<p>3.1. Переходим: Policy & Objects —> IPv4 Policy;</p>
+<p>3.2. Нажимаем кнопку : Create New;</p>
+<p>3.3. В открывшейся форме заполняем поля:</p>
+<p>- Name - Любое название правила;</p>
+<p>- Incoming Interface - Внешний интерфейс;</p>
+<p>- Outgoing Interface - Внутрений интерфейс локальной сети;</p>
+<p>- Source - Указываем all(все) или любой другой источник;</p>
+<p>- Destination Address - Выбираем из списка созданный в п.1 виртуальный IP;</p>
+<p>- Service - Выбираем из списка созданную в п.2 службу;</p>
+<p>- Action - Выбираем ACCEPT;</p>
+<p>- Отключаем переключатель NAT;</p>
+
+]]>
+        </string>
 
 </resources>
