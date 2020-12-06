@@ -41,7 +41,7 @@ public class ScrollingFragment extends Fragment {
             int path =
                     getActivity().getResources().getIdentifier(source, "drawable",
                             getActivity().getApplicationContext().getPackageName());
-            drawFromPath = getActivity().getResources().getDrawable(path);
+            drawFromPath = getActivity().getResources().getDrawable(path, getContext().getTheme());
             drawFromPath.setBounds(0, 0, drawFromPath.getIntrinsicWidth(),
                     drawFromPath.getIntrinsicHeight());
             return drawFromPath;
