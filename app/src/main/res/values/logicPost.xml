@@ -1,20 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="logicPostTitle">
-        <item>Test logic post</item>
-        <item>Test logic post 2</item>
+        <item>Логические операции</item>
+        <item>Инверсия</item>
+        <item>Конъюкция</item>
+        <item>Дизъюкция</item>
+        <item>Исключающее ИЛИ</item>
+        <item>Импликация</item>
+        <item>Торжество</item>
     </string-array>
+
     <string-array name="logicPostDetal">
-        <item>Подробнее прочитать внутри статьи</item>
-        <item>Bla bla blaa></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
     </string-array>
+
     <string-array name="logicPostText">
-        <item>@string/large_text</item>
-        <item>No text</item>
+        <item>@string/Logical_operations</item>
+        <item>@string/inversion</item>
+        <item>@string/conjunction</item>
+        <item>@string/disjunction</item>
+        <item>@string/or</item>
+        <item>@string/implication</item>
+        <item>@string/celebration</item>
     </string-array>
+
     <array name="logicPostImg">
-        <item>@drawable/fon</item>
-        <item>@drawable/fon</item>
+        <item>@drawable/logicposts1</item>
+        <item>@drawable/inversion3</item>
+        <item>@drawable/conjunction3</item>
+        <item>@drawable/disjunction3</item>
+        <item>@drawable/or3</item>
+        <item>@drawable/implication3</item>
+        <item>@drawable/celebration3</item>
     </array>
 
     <array name="logicPosts">
@@ -23,5 +46,72 @@
         <item>@array/logicPostText</item>
         <item>@array/logicPostImg</item>
     </array>
+
+    <string name="Logical_operations">
+        <![CDATA[
+       <p> <dfn>Логической операцией</dfn> называется выбор решения (действия), исходя из  заданной ситуации, определяемой набором факторов (условий).</p>
+<p>Зависимости между логическими функциями (операциями) и логическими переменными устанавливаются с помощью таблиц истинности. Используются следующие логические операции: НЕ, И, ИЛИ, исключающее ИЛИ, тождество.</p>
+         ]]>
+    </string>
+
+    <string name="inversion">
+        <![CDATA[
+        <p>Логическая операция <span style=\"color:red\">НЕ</span> (инверсия, операция логического отрицания). Действие, которое определяется операцией <span style=\"color:red\">НЕ</span> произойдет, если отсутствует фактор его определяющий.</p>
+        <p>Таблица истинности для операции <span style=\"color:red\">НЕ</span> имеет вид:
+        <div style="text-align: center"><img src="inversion1" /></div>
+        Действие, связанное с операцией <span style=\"color:red\">НЕ</span> можно записать следующим образом:
+<div style="text-align: center"><img src="inversion2" /></div>
+ ]]>
+    </string>
+
+    <string name="conjunction">
+        <![CDATA[
+        <p>Логическая операция <span style=\"color:red\">И</span> (конъюнкция, операция логического умножения). Действие, которое определяется операцией <span style=\"color:red\">И</span> произойдет, если выполняются все влияющие на него факторы (условия).</p>
+<p>Таблица истинности для операции <span style=\"color:red\">И</span> имеет вид:
+<div style="text-align: center"><img src="conjunction1" /></div>
+Действие, связанное с операцией <span style=\"color:red\">И</span> можно записать следующим образом:
+<div style="text-align: center"><img src="conjunction2" /></div>
+         ]]>
+    </string>
+
+    <string name="disjunction">
+        <![CDATA[
+        <p>Логическая операция <span style=\"color:red\">ИЛИ</span> (дизъюнкция, операция логического сложения). Действие, которое определяется операцией <span style=\"color:red\">ИЛИ</span> произойдет, если выполняются хотя бы одно (любое), определяющее его условие.</p>
+        <p>Таблица истинности для операции <span style=\"color:red\">ИЛИ</span> имеет вид:
+<div style="text-align: center"><img src="disjunction1" /></div>
+       <p>Действие, связанное с операцией ИЛИ можно записать следующим образом:
+       <div style="text-align: center"><img src="disjunction2" /></div>
+]]>
+    </string>
+
+    <string name="or">
+        <![CDATA[
+        <p>Логическая операция <span style=\"color:red\">ИСКЛЮЧАЮЩЕЕ ИЛИ</span>. Операция <span style=\"color:red\">ИСКЛЮЧАЮЩЕЕ ИЛИ</span> осуществляет суммирование по модулю два т.е. без учета переноса в старший разряд.</p>
+        <p>Таблица истинности имеет вид:
+        <div style="text-align: center"><img src="or1" /></div>
+        <p>Действие, связанное с операцией <span style=\"color:red\">ИСКЛЮЧАЮЩЕЕ ИЛИ</span> можно записать следующим образом:
+        <div style="text-align: center"><img src="or2" /></div>
+         ]]>
+    </string>
+
+    <string name="implication">
+        <![CDATA[
+        <p>Действие, связанное с операцией <span style=\"color:red\">ИМПЛИКАЦИИ</span> можно записать следующим образом:
+        <div style="text-align: center"><img src="implication1" /></div>
+        <p>Таблица истинности <span style=\"color:red\">ИМПЛИКАЦИИ</span> имеет вид:
+        <div style="text-align: center"><img src="implication2" /></div>
+         ]]>
+    </string>
+
+    <string name="celebration">
+        <![CDATA[
+        <p>Операция <span style=\"color:red\">ТОРЖЕСТВО</span>. Операция тождество определяет тождественность аргументов.</p>
+<p>Таблица истинности для операции <span style=\"color:red\">ТОРЖЕСТВО</span> имеет вид:
+<div style="text-align: center"><img src="celebration1" /></div>
+<p>Действие, связанное с операцией <span style=\"color:red\">ТОРЖЕСТВО</span> можно записать следующим образом:
+<div style="text-align: center"><img src="celebration2" /></div>
+         ]]>
+    </string>
+
 
 </resources>

@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="formulPostTitle">
-        <item>Test formul post</item>
-        <item>Test formul post 2</item>
+        <item>Основные формулы</item>
+        <item>Формула Хартли</item>
+        <item>Перевод чисел</item>
+        <item>Формулы и функции в электронных таблицах</item>
     </string-array>
+
     <string-array name="formulPostDetal">
-        <item>Подробнее прочитать внутри статьи</item>
-        <item>Bla bla blaa></item>
+        <item></item>
+        <item>></item>
+        <item>></item>
+        <item></item>
     </string-array>
+
     <string-array name="formulPostText">
-        <item>@string/large_text</item>
-        <item>No text</item>
+        <item>@string/formul</item>
+        <item>@string/Hartly</item>
+        <item>@string/system</item>
+        <item>@string/exel</item>
     </string-array>
+
     <array name="formulPostImg">
+        <item>@drawable/fon</item>
+        <item>@drawable/fon</item>
         <item>@drawable/fon</item>
         <item>@drawable/fon</item>
     </array>
@@ -25,10 +36,75 @@
     </array>
 
 
-    <string name="testTest">Test test</string>
-    <string name="large_textttest">
-        <![CDATA[
+    <string name="formul">
+               <![CDATA[
+<p><h6>\t\tN = 2<sup>i</sup><h6></p>
+<p>N - мощность алфавита (количество знаков в алфавите)</p>
+<p>i - информационный вес символа алфавита (количество информации в одном символе)</p>
 
+<p><h6>\t\tI = K * i<h6></p>
+<p>I - количество информации, содержащееся в выбранном сообщении (информационный объем сообщения)</p>
+<p>K - число символов в сообщении</p>
+<p>i - информационный вес символа (количество информации в одном символе)</p>
+
+<p><h6>\t\tQ = NL<h6></p>
+<p>Q - количество разных сообщений</p>
+<p>N - количество символов</p>
+<p>L - длина сообщения</p>
+         ]]>
+    </string>
+    <string name="Hartly">
+        <![CDATA[
+<p><h6>\t\I = log<sub>2</sub>N<h6></p>
+<p>I - количество информации, содержащееся в выбранном сообщении</p>
+<p>N - количество сообщений</p>
+         ]]>
+    </string>
+    <string name="system">
+        <![CDATA[
+Перевод чисел из других систем счисления в десятичную систему счисления
+<p>a<sub>3</sub>a<sub>2</sub>a<sub>1</sub>a<sub>0</sub> = a<sub>3</sub> * <span style=\"color:red\">p</span><sup>3</sup> + a<sub>2</sub> * <span style=\"color:red\">p</span><sup>2</sup> + a<sub>1</sub> * <span style=\"color:red\">p</span><sup>1</sup> + a<sub>0</sub> * <span style=\"color:red\">p</span><sup>0</sup></p>
+    <p> p - основание системы счисления в котором представлено число.  </p>
+    <p> пример </p>
+    <p>(1<sub>3</sub>2<sub>2</sub>3<sub>1</sub>4<sub>0</sub>)<sub><span style=\"color:red\">5</span></sub> = 1<sub>3</sub> * <span style=\"color:red\">5</span><sup>3</sup> + 2<sub>2</sub> * <span style=\"color:red\">5</span><sup>2</sup> + 3<sub>1</sub> * <span style=\"color:red\">5</span><sup>1</sup> + 4<sub>0</sub> * <span style=\"color:red\">5</span><sup>0</sup>=194<sub>10</sub></p>
+]]>
+    </string>
+    <string name="exel">
+        <![CDATA[
+Ввод формулы всегда начинается со знака равенства (=). По этому признаку OOo Calc отличает формулы от текста. OOo Calc позволяет использовать в формулах самые разные операторы.
+<p>В табл. 1 перечислены операторы, которые распознает программа.</p>
+<div style="text-align: center"><img src="exel1" /></div>
+
+<p>При написании формул необходимо использовать круглые скобки. Например, в формуле вида =(прибыль-расходы)*ставка налога</p>
+
+<p>Кроме того, в формулах можно использовать вложенные скобки, т.е. скобки, заключенные внутрь других скобок. Если в формуле есть вложенные скобки, то OOo Calc вычисляет сначала выражения, которые находятся в самых «внутренних» скобках, а затем движется изнутри наружу. </p>
+<p>Например, в формуле ((B2*C2)+(B3*C3)+(B4*C4))*B6
+использовано четыре пары круглых скобок, причем три из них вложены в четвертые скобки. OOo Calc вычисляет значения выражений внутри всех вложенных скобок, затем складывает их и результат умножает на значение ячейки В6.</p>
+
+<p>Не забывайте, что каждой открывающейся скобке должна соответствовать закрывающая скобка. Если где-то остались незакрытые скобки, то OOo Calc выдаст сообщение об этом и не позволит вам ввести формулу.</p>
+<p>В формулах допускается использование <h5>функций.</h5></p>
+
+<p>Функции бывают:
+<ul>
+<li>\tМатематические (Math&Trig)</li>
+<li>\tЛогические (Logical)</li>
+<li>\tСтатистические (Statistical)</li>
+<li>\tФинансовые (Finance)</li>
+<li>\tТекстовые (Text)</li>
+<li>\tДата и время (Date & Time)</li>
+<li>\tСсылки и массивы (Reference)</li>
+<li>\tРабота с базой данных (Database)</li>
+<li>\tПроверка свойств и значений (Information)</li>
+<ul>
+
+<p>Примеры функций:
+<ul>
+<li>\tCOS - возвращает косинус заданного угла (в радианах)</li>
+<li>\tABS - возвращает модуль (абсолютную величину) числа</li>
+<li>\tDEGREES - преобразует радианы в градусы</li>
+<li>\tRADIANS - преобразует градусы в радианы</li>
+<ul>
+<p>Функции можно использовать в сочетании друг с другом, образуя длинные математические выражения. Например, выражение =2*ABS(COS(RADIANS(A1))) вернет удвоенный модуль косинуса угла заданного в A1 в градусах.</p>
          ]]>
     </string>
 
