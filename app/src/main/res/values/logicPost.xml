@@ -31,7 +31,7 @@
     </string-array>
 
     <array name="logicPostImg">
-        <item>@drawable/logicposts1</item>
+        <item>@drawable/fon</item>
         <item>@drawable/inversion3</item>
         <item>@drawable/conjunction3</item>
         <item>@drawable/disjunction3</item>

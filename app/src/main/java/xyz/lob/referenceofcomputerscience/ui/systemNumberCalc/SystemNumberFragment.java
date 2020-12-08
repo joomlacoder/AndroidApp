@@ -13,9 +13,6 @@ import androidx.viewpager2.widget.ViewPager2;
 import xyz.lob.referenceofcomputerscience.R;
 
 public class SystemNumberFragment extends Fragment {
-
-    //private SystemNumberViewModel mViewModel;
-
     public static SystemNumberFragment newInstance() {
         return new SystemNumberFragment();
     }
@@ -26,17 +23,13 @@ public class SystemNumberFragment extends Fragment {
         View view = inflater.inflate(R.layout.system_number_fragment, container, false);
         ViewPager2 viewPager2 = view.findViewById(R.id.viewPager);
         Adapter myAdapter = new Adapter(this);
-        myAdapter.addFragment(new FragmentCalc());
-        myAdapter.addFragment(new FragmentCalc());
+        myAdapter.addFragment(FragmentCalc.newInstance(10));
+        myAdapter.addFragment(FragmentCalc.newInstance(2));
+        myAdapter.addFragment(FragmentCalc.newInstance(8));
+        myAdapter.addFragment(FragmentCalc.newInstance(16));
         viewPager2.setAdapter(myAdapter);
         viewPager2.setPageTransformer(new ZoomOutPageTransformer());
         return view;
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        //mViewModel = new ViewModelProvider(this).get(SystemNumberViewModel.class);
     }
 
 }

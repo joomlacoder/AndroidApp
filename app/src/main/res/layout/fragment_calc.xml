@@ -25,11 +25,13 @@
         android:id="@+id/editTextNumber2"
         style="@style/calcInput"
         android:layout_width="wrap_content"
-        android:hint="Введите Число в 10 системе"
+        android:hint="Введите число "
         android:inputType="numberDecimal"
         tools:ignore="LabelFor" />
 
-    <TableLayout style="@style/calcTable">
+    <TableLayout
+        android:id="@+id/calcTable"
+        style="@style/calcTable">
 
         <TableRow style="@style/calcTableRow">
 
@@ -41,7 +43,7 @@
             <TextView
                 android:id="@+id/textView15"
                 style="@style/calcTableRowRight"
-                tools:text="TextView"  />
+                tools:text="TextView" />
         </TableRow>
 
         <TableRow style="@style/calcTableRow">
@@ -49,12 +51,12 @@
             <TextView
                 android:id="@+id/textView16"
                 style="@style/calcTableRowLeft"
-                tools:text="TextView"  />
+                tools:text="TextView" />
 
             <TextView
                 android:id="@+id/textView17"
                 style="@style/calcTableRowRight"
-                tools:text="TextView"  />
+                tools:text="TextView" />
         </TableRow>
 
         <TableRow style="@style/calcTableRow">
@@ -62,12 +64,12 @@
             <TextView
                 android:id="@+id/textView18"
                 style="@style/calcTableRowLeft"
-                tools:text="TextView"  />
+                tools:text="TextView" />
 
             <TextView
                 android:id="@+id/textView19"
                 style="@style/calcTableRowRight"
-                tools:text="TextView"  />
+                tools:text="TextView" />
         </TableRow>
 
     </TableLayout>
