@@ -25,15 +25,11 @@ public class ForeverRecyclerAdapter extends RecyclerView.Adapter<ForeverRecycler
     private List<Post> mValues;
     private NavController navController;
 
-
-
     @NotNull
     @Override
     public ForeverRecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         return new ForeverRecyclerAdapter.ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_forever, parent, false));
     }
-
 
     @SuppressLint("ResourceType")
     @Override
@@ -43,7 +39,7 @@ public class ForeverRecyclerAdapter extends RecyclerView.Adapter<ForeverRecycler
 
     public ForeverRecyclerAdapter(NavController navController) {
         this.navController = navController;
-        mValues = App.getInstance().getContent().getAllPost();
+        mValues = App.getInstance().getContent().getForevers();
     }
 
     @Override
@@ -71,6 +67,8 @@ public class ForeverRecyclerAdapter extends RecyclerView.Adapter<ForeverRecycler
         }
 
         public void setData(Post post){
+            titleView.setText(post.getTitle());
+            imageView.setImageDrawable(post.getImg());
         }
 
 

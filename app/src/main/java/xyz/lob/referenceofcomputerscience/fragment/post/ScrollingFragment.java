@@ -1,11 +1,9 @@
 package xyz.lob.referenceofcomputerscience.fragment.post;
 
-import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spanned;
-import android.util.ArraySet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,35 +15,32 @@ import androidx.annotation.Nullable;
 import androidx.core.text.HtmlCompat;
 import androidx.fragment.app.Fragment;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 import xyz.lob.referenceofcomputerscience.App;
 import xyz.lob.referenceofcomputerscience.R;
 import xyz.lob.referenceofcomputerscience.content.model.Post;
+import xyz.lob.referenceofcomputerscience.fragment.posts.PostsFragment;
 
 public class ScrollingFragment extends Fragment {
     private String cat;
     private int id;
-    private boolean isForever;
     private Post post;
-    private SharedPreferences preferences;
+    private App app;
 
     @Override
     public void onCreate(@Nullable Bundle bundle) {
         super.onCreate(bundle);
         if (getArguments() != null) {
-            id = getArguments().getInt("id");
-            cat = getArguments().getString("category");
+            id = getArguments().getInt(PostsFragment.ARG_ID);
+            if(getArguments().containsKey(PostsFragment.ARG_CATEGORY));
+                cat = getArguments().getString(PostsFragment.ARG_CATEGORY);
         }
-        post = App.getInstance().getContent().getPost(cat, id);
-
+        app = App.getInstance();
+        post = app.getContent().getPost(id);
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        preferences = App.getPreferences();
         View view = inflater.inflate(R.layout.fragment_scrolling, container, false);
 
         Spanned textSpan = Html.fromHtml(post.getText(), HtmlCompat.FROM_HTML_MODE_LEGACY, source -> {
@@ -64,27 +59,20 @@ public class ScrollingFragment extends Fragment {
         ((ImageView) view.findViewById(R.id.scrolingImageView)).setImageDrawable(post.getImg());
         ImageView image = (ImageView) view.findViewById(R.id.imageButton);
 
-        if(preferences.getStringSet(App.APP_PREFERENCES_FOREVER, new ArraySet<>()).contains(post.getTitle())) {
-            isForever = true;
+        if(post.getForever())
             image.setImageResource(R.drawable.ic_forever_on);
-        } else {
-            isForever = false;
+        else
             image.setImageResource(R.drawable.ic_forever_off);
-        }
 
         image.setOnClickListener(v -> {
-            SharedPreferences.Editor editor = preferences.edit();
-            Set<String> stringForever = new LinkedHashSet<>(preferences.getStringSet(App.APP_PREFERENCES_FOREVER, new ArraySet<>()));
-            if (!isForever) {
-                stringForever.add(getActivity().getTitle().toString());
+            if (!post.getForever()) {
+                app.addForever(post.getTitle());
                 image.setImageResource(R.drawable.ic_forever_on);
             } else {
-                stringForever.remove(getActivity().getTitle().toString());
+                app.removeForever(post.getTitle());
                 image.setImageResource(R.drawable.ic_forever_off);
             }
-            isForever = !isForever;
-            editor.putStringSet(App.APP_PREFERENCES_FOREVER, stringForever);
-            editor.apply();
+            post.setForever(!post.getForever());
         });
 
         return view;
@@ -92,8 +80,8 @@ public class ScrollingFragment extends Fragment {
 
     public static ScrollingFragment newInstance(String cat, int id) {
         Bundle bundle = new Bundle();
-        bundle.putString("category", cat);
-        bundle.putInt("id", id);
+        bundle.putString(PostsFragment.ARG_CATEGORY, cat);
+        bundle.putInt(PostsFragment.ARG_ID, id);
         ScrollingFragment fragment = new ScrollingFragment();
         fragment.setArguments(bundle);
         return fragment;

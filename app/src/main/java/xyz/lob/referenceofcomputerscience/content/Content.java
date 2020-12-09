@@ -6,16 +6,18 @@ import android.graphics.drawable.Drawable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
+import xyz.lob.referenceofcomputerscience.App;
 import xyz.lob.referenceofcomputerscience.R;
 import xyz.lob.referenceofcomputerscience.content.model.Post;
 
 
 public class Content {
 
-    private final List<Post> posts = new ArrayList<>();
+    private List<Post> posts = new ArrayList<>();
 
-    enum Category {
+    public enum Category {
         WIN(R.array.winPosts, "Windows"), LINUX(R.array.linuxPosts, "Linux"),
         NET(R.array.netPosts, "Сети"), PC(R.array.pcPosts, "Компоненты пк"),
         LOGIC(R.array.logicPosts, "Алгебра логики"), FORMULS(R.array.formulPosts, "Основные формулы"),
@@ -26,6 +28,10 @@ public class Content {
         Category(int id, String title) {
             this.id = id;
             this.title = title;
+        }
+
+        public String getTitle(){
+            return title;
         }
 
         public int getArray() {
@@ -46,8 +52,14 @@ public class Content {
         for(Category cat : Category.values())
             allPost.addAll(makeCategory(cat.title));
         posts.clear();
-        posts.addAll(posts);
+        posts.addAll(allPost);
         return allPost;
+    }
+
+    public List<Post> getForevers(){
+        List<Post> allPost = getAllPost();
+        posts = allPost.stream().filter(post -> App.getInstance().getForevers().contains(post.getTitle())).collect(Collectors.toList());
+        return posts;
     }
 
     public Post getPost(String title){
@@ -96,7 +108,7 @@ public class Content {
         typedArrayPosts.recycle();
 
         for (int i = 0; i < arrayPosts[0].length; ++i) {
-            posts.add(new Post((String) arrayPosts[0][i], (String) arrayPosts[2][i], makeDetails((String) arrayPosts[1][i]), (Drawable) arrayPosts[3][i]));
+            posts.add(new Post((String) arrayPosts[0][i], (String) arrayPosts[2][i], makeDetails((String) arrayPosts[1][i]), (Drawable) arrayPosts[3][i]).setForever(App.getInstance().getForevers().contains((String) arrayPosts[0][i])));
         }
 
         this.posts.addAll(posts);
