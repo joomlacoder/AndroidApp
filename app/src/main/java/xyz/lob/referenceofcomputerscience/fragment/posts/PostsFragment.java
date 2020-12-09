@@ -1,4 +1,4 @@
-package xyz.lob.referenceofcomputerscience.ui.recycle;
+package xyz.lob.referenceofcomputerscience.fragment.posts;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -17,7 +17,9 @@ import java.util.List;
 
 import xyz.lob.referenceofcomputerscience.App;
 import xyz.lob.referenceofcomputerscience.R;
-import xyz.lob.referenceofcomputerscience.content.Post;
+import xyz.lob.referenceofcomputerscience.content.model.Post;
+import xyz.lob.referenceofcomputerscience.ui.recycle.OnSelectedRecyclerItemListener;
+import xyz.lob.referenceofcomputerscience.ui.recycle.post.PostRecyclerViewAdapter;
 
 
 public class PostsFragment extends Fragment implements OnSelectedRecyclerItemListener {
@@ -29,7 +31,7 @@ public class PostsFragment extends Fragment implements OnSelectedRecyclerItemLis
     private String category;
     private int mColumnCount = 1;
 
-    private MyPostRecyclerViewAdapter adapter;
+    private PostRecyclerViewAdapter adapter;
     private List<Post> posts = new ArrayList<>();
 
     @Override
@@ -48,7 +50,7 @@ public class PostsFragment extends Fragment implements OnSelectedRecyclerItemLis
             category = getArguments().getString(ARG_CATEGORY);
         }
         posts = App.getInstance().getContent().makeCategory(category);
-        adapter = new MyPostRecyclerViewAdapter(posts, this, getActivity().getApplicationContext());
+        adapter = new PostRecyclerViewAdapter(posts, this, getActivity().getApplicationContext());
     }
 
     @Override

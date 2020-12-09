@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fon_calc"
-    tools:context=".ui.systemNumberCalc.SystemNumberFragment">
+    tools:context=".fragment.systemNumberCalc.SystemNumberFragment">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"

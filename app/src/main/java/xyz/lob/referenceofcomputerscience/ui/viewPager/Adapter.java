@@ -1,4 +1,4 @@
-package xyz.lob.referenceofcomputerscience.ui.systemNumberCalc;
+package xyz.lob.referenceofcomputerscience.ui.viewPager;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

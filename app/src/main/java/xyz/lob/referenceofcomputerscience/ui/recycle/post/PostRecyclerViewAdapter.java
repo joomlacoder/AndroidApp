@@ -1,4 +1,4 @@
-package xyz.lob.referenceofcomputerscience.ui.recycle;
+package xyz.lob.referenceofcomputerscience.ui.recycle.post;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -16,14 +16,15 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 import xyz.lob.referenceofcomputerscience.R;
-import xyz.lob.referenceofcomputerscience.content.Post;
+import xyz.lob.referenceofcomputerscience.content.model.Post;
+import xyz.lob.referenceofcomputerscience.ui.recycle.OnSelectedRecyclerItemListener;
 
-public class MyPostRecyclerViewAdapter extends RecyclerView.Adapter<MyPostRecyclerViewAdapter.ViewHolder> {
+public class PostRecyclerViewAdapter extends RecyclerView.Adapter<PostRecyclerViewAdapter.ViewHolder> {
 
     private List<Post> mValues;
     private OnSelectedRecyclerItemListener recOnClicklistener;
 
-    public MyPostRecyclerViewAdapter(List<Post> mValues, OnSelectedRecyclerItemListener recOnClicklistener, Context context) {
+    public PostRecyclerViewAdapter(List<Post> mValues, OnSelectedRecyclerItemListener recOnClicklistener, Context context) {
         this.mValues = mValues;
         this.recOnClicklistener = recOnClicklistener;
     }

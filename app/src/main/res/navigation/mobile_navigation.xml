@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="xyz.lob.referenceofcomputerscience.ui.home.HomeFragment"
+        android:name="xyz.lob.referenceofcomputerscience.fragment.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" >
 
@@ -24,12 +24,12 @@
 
     <fragment
         android:id="@+id/nav_calcSystemNumber"
-        android:name="xyz.lob.referenceofcomputerscience.ui.systemNumberCalc.SystemNumberFragment"
+        android:name="xyz.lob.referenceofcomputerscience.fragment.systemNumberCalc.SystemNumberFragment"
         android:label="@string/menu_systemNumber"
         tools:layout="@layout/fragment_calc"/>
     <fragment
         android:id="@+id/nav_postFragment"
-        android:name="xyz.lob.referenceofcomputerscience.ui.recycle.PostsFragment"
+        android:name="xyz.lob.referenceofcomputerscience.fragment.posts.PostsFragment"
         tools:layout="@layout/fragment_item_list" >
         <action
             android:id="@+id/action_nav_postFragment_to_nav_scrollingFragment"
@@ -46,7 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_scrollingFragment"
-        android:name="xyz.lob.referenceofcomputerscience.ui.post.ScrollingFragment"
+        android:name="xyz.lob.referenceofcomputerscience.fragment.post.ScrollingFragment"
         tools:layout="@layout/fragment_scrolling" >
         <argument
             android:name="category"

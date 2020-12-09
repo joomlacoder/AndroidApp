@@ -9,5 +9,5 @@
     android:background="#EAEAEA"
     android:rotationX="0"
     app:layoutManager="LinearLayoutManager"
-    tools:context=".ui.recycle.PostsFragment"
+    tools:context=".fragment.posts.PostsFragment"
     tools:listitem="@layout/fragment_item" />

@@ -1,4 +1,4 @@
-package xyz.lob.referenceofcomputerscience.ui.post;
+package xyz.lob.referenceofcomputerscience.fragment.post;
 
 import android.app.Application;
 import android.graphics.drawable.Drawable;

@@ -1,4 +1,4 @@
-package xyz.lob.referenceofcomputerscience.content;
+package xyz.lob.referenceofcomputerscience.content.model;
 
 import android.graphics.drawable.Drawable;
 

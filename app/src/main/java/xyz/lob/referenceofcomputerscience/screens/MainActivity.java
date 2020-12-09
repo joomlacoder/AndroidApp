@@ -21,7 +21,7 @@ import java.util.Map;
 
 import xyz.lob.referenceofcomputerscience.GoItemMenu;
 import xyz.lob.referenceofcomputerscience.R;
-import xyz.lob.referenceofcomputerscience.ui.recycle.PostsFragment;
+import xyz.lob.referenceofcomputerscience.fragment.posts.PostsFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 

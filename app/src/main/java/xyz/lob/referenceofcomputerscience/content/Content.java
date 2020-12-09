@@ -3,12 +3,12 @@ package xyz.lob.referenceofcomputerscience.content;
 import android.app.Application;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import xyz.lob.referenceofcomputerscience.R;
+import xyz.lob.referenceofcomputerscience.content.model.Post;
 
 
 public class Content {
@@ -39,6 +39,24 @@ public class Content {
             }
             return c;
         }
+    }
+
+    public List<Post> getAllPost(){
+        List<Post> allPost = new ArrayList<>();
+        for(Category cat : Category.values())
+            allPost.addAll(makeCategory(cat.title));
+        posts.clear();
+        posts.addAll(posts);
+        return allPost;
+    }
+
+    public Post getPost(String title){
+        Post post = null;
+        for (Post post1 : posts) {
+            if (post1.getTitle().equals(title))
+                post = post1;
+        }
+        return post;
     }
 
     public Post getPost(String cat, int id) {
@@ -77,10 +95,7 @@ public class Content {
         }
         typedArrayPosts.recycle();
 
-        Log.e("lenght", arrayPosts[0].length + " ");
-
         for (int i = 0; i < arrayPosts[0].length; ++i) {
-            Log.e("int", " " + i);
             posts.add(new Post((String) arrayPosts[0][i], (String) arrayPosts[2][i], makeDetails((String) arrayPosts[1][i]), (Drawable) arrayPosts[3][i]));
         }
 

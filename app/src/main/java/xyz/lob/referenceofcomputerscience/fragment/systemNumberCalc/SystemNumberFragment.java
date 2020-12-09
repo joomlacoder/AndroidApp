@@ -1,4 +1,4 @@
-package xyz.lob.referenceofcomputerscience.ui.systemNumberCalc;
+package xyz.lob.referenceofcomputerscience.fragment.systemNumberCalc;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import xyz.lob.referenceofcomputerscience.R;
+import xyz.lob.referenceofcomputerscience.ui.anim.ZoomOutPageTransformer;
+import xyz.lob.referenceofcomputerscience.ui.viewPager.Adapter;
 
 public class SystemNumberFragment extends Fragment {
     public static SystemNumberFragment newInstance() {

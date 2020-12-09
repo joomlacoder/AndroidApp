@@ -1,10 +1,9 @@
-package xyz.lob.referenceofcomputerscience.ui.systemNumberCalc;
+package xyz.lob.referenceofcomputerscience.fragment.systemNumberCalc;
 
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,6 +51,7 @@ public class FragmentCalc extends Fragment {
         tv2.setText(text[1]);
         tv3.setText(text[2]);
 
+
         EditText editText = calcView.findViewById(R.id.editTextNumber2);
         if(sys.sys == 16){
             editText.setInputType(InputType.TYPE_CLASS_TEXT);
@@ -75,7 +75,6 @@ public class FragmentCalc extends Fragment {
                 TextView iv2 = calcView.findViewById(R.id.textView17);
                 TextView iv3 = calcView.findViewById(R.id.textView19);
                 String[] arr;
-                Log.e("crashh", s.toString());
                 if(s.length() > 0)
                     arr = sys.getCalcNumber(s.toString());
                 else

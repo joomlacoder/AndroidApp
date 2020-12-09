@@ -1,4 +1,4 @@
-package xyz.lob.referenceofcomputerscience.ui.systemNumberCalc;
+package xyz.lob.referenceofcomputerscience.ui.anim;
 
 import android.view.View;
 

@@ -8,7 +8,7 @@
     android:background="@drawable/grand_fon"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ui.systemNumberCalc.FragmentCalc">
+    tools:context=".fragment.systemNumberCalc.FragmentCalc">
 
     <androidx.constraintlayout.widget.Group
         style="@style/calcGroup"
