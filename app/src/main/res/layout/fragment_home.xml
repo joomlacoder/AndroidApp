@@ -183,7 +183,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:gravity="center_horizontal"
-        android:text="Избраное"
+        android:text="Избранное"
         android:textSize="18sp" />
 
     <androidx.recyclerview.widget.RecyclerView
