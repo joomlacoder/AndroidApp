@@ -63,7 +63,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             this.view = view;
             titleView = view.findViewById(R.id.itemCardTitle);
             imageView = view.findViewById(R.id.itemCardLogo);
-            detaleView = view.findViewById(R.id.itemCardTitle);
+            detaleView = view.findViewById(R.id.itemCardText);
             view.setOnClickListener(this);
         }
 
