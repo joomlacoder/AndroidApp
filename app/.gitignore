@@ -1,1 +1,5 @@
 /build
+/debug/app-debug.aab
+/debug/app-debug.apk
+/google-services.json
+/debug/output-metadata.json

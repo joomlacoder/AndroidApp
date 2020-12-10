@@ -15,7 +15,7 @@ import xyz.lob.referenceofcomputerscience.content.model.Post;
 
 public class Content {
 
-    private List<Post> posts = new ArrayList<>();
+    private final List<Post> posts = new ArrayList<>();
 
     public enum Category {
         WIN(R.array.winPosts, "Windows"), LINUX(R.array.linuxPosts, "Linux"),
@@ -49,9 +49,11 @@ public class Content {
 
     public List<Post> getBySearch(String query) {
         List<Post> allPost = getAllPost();
-        posts = allPost.stream().filter(post -> {
+        List<Post> posts = allPost.stream().filter(post -> {
             return (post.getTitle().toLowerCase().contains(query.toLowerCase()) || post.getContent().toLowerCase().contains(query.toLowerCase()));
         }).collect(Collectors.toList());
+        this.posts.clear();
+        this.posts.addAll(posts);
         return posts;
     }
 
@@ -66,7 +68,9 @@ public class Content {
 
     public List<Post> getForevers() {
         List<Post> allPost = getAllPost();
-        posts = allPost.stream().filter(post -> App.getInstance().getForevers().contains(post.getTitle())).collect(Collectors.toList());
+        List<Post> posts = allPost.stream().filter(post -> App.getInstance().getForevers().contains(post.getTitle())).collect(Collectors.toList());
+        this.posts.clear();
+        this.posts.addAll(posts);
         return posts;
     }
 

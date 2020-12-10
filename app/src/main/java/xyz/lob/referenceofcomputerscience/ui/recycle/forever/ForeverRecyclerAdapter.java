@@ -1,6 +1,7 @@
 package xyz.lob.referenceofcomputerscience.ui.recycle.forever;
 
 import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import java.util.List;
 import xyz.lob.referenceofcomputerscience.App;
 import xyz.lob.referenceofcomputerscience.R;
 import xyz.lob.referenceofcomputerscience.content.model.Post;
+import xyz.lob.referenceofcomputerscience.fragment.posts.PostsFragment;
 
 
 public class ForeverRecyclerAdapter extends RecyclerView.Adapter<ForeverRecyclerAdapter.ViewHolder>{
@@ -58,7 +60,6 @@ public class ForeverRecyclerAdapter extends RecyclerView.Adapter<ForeverRecycler
         public final TextView titleView;
         public final ImageView imageView;
 
-
         public ViewHolder(@NonNull View view) {
             super(view);
             this.view = view;
@@ -75,7 +76,9 @@ public class ForeverRecyclerAdapter extends RecyclerView.Adapter<ForeverRecycler
 
         @Override
         public void onClick(View v) {
-            navController.navigate(R.id.nav_scrollingFragment);
+            Bundle bundle = new Bundle();
+            bundle.putInt(PostsFragment.ARG_ID, getAdapterPosition());
+            navController.navigate(R.id.nav_scrollingFragment, bundle);
         }
     }
 }

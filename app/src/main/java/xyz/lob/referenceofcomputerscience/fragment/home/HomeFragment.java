@@ -72,6 +72,7 @@ public class HomeFragment extends Fragment {
 
             }
         });
+
         adapter = new ForeverRecyclerAdapter(navController);
         View view = root.findViewById(R.id.recyclerForever);
         if (view instanceof RecyclerView) {

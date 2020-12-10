@@ -1,5 +1,6 @@
 package xyz.lob.referenceofcomputerscience.ui.recycle.search;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import java.util.List;
 import xyz.lob.referenceofcomputerscience.App;
 import xyz.lob.referenceofcomputerscience.R;
 import xyz.lob.referenceofcomputerscience.content.model.Post;
+import xyz.lob.referenceofcomputerscience.fragment.posts.PostsFragment;
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder>{
 
@@ -76,7 +78,9 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
         @Override
         public void onClick(View v) {
-            navController.navigate(R.id.nav_scrollingFragment);
+            Bundle bundle = new Bundle();
+            bundle.putInt(PostsFragment.ARG_ID, getAdapterPosition());
+            navController.navigate(R.id.nav_scrollingFragment, bundle);
         }
     }
 }
