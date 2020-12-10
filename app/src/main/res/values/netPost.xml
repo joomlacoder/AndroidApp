@@ -2,19 +2,26 @@
 <resources>
     <string-array name="netPostTitle">
         <item>Проброс портов</item>
-        <item>Test net post 2</item>
+        <item>Сетевые устройства</item>
+        <item>TCP/UDP порты</item>
     </string-array>
+
     <string-array name="netPostDetal">
         <item>Настройка портов</item>
-        <item>Bla bla blaa></item>
+        <item>Перечень сетевых устройств</item>
+        <item>Распространённые TCP/UDP порты</item>
     </string-array>
+
     <string-array name="netPostText">
         <item>@string/textPort</item>
-        <item>No text</item>
+        <item>@string/network_equipment</item>
+        <item>@string/TCP_UDP</item>
     </string-array>
+
     <array name="netPostImg">
         <item>@drawable/net_port</item>
-        <item>@drawable/fon</item>
+        <item>@drawable/webnet</item>
+        <item>@drawable/tcp_udp</item>
     </array>
 
     <array name="netPosts">
@@ -57,6 +64,57 @@
 <p>- Action - Выбираем ACCEPT;</p>
 <p>- Отключаем переключатель NAT;</p>
 
+]]>
+        </string>
+    <string name="network_equipment">
+        <![CDATA[
+<p><span style=\"color:blue\">Сетевые карты</span> – это контроллеры, подключаемые в слоты расширения материнской платы компьютера, предназначенные для передачи сигналов в сеть и приема сигналов из сети.</p>
+<div style="text-align: center"><img src="networkcard" /></div>
+<p><span style=\"color:blue\">Терминаторы</span> – это резисторы номиналом 50 Ом, которые производят затухание сигнала на концах сегмента сети.</p>
+<div style="text-align: center"><img src="terminator" /></div>
+<p><span style=\"color:blue\">Концентраторы (Hub)</span> – это центральные устройства кабельной системы или сети физической топологии "звезда", которые при получении пакета на один из своих портов пересылает его на все остальные. В результате получается сеть с логической структурой общей шины. Различают концентраторы активные и пассивные. Активные концентраторы усиливают полученные сигналы и передают их. Пассивные концентраторы пропускают через себя сигнал, не усиливая и не восстанавливая его.</p>
+<div style="text-align: center"><img src="hubs" /></div>
+<p><span style=\"color:blue\">Повторители (Repeater)</span> – устройства сети, усиливает и заново формирует форму входящего аналогового сигнала сети на расстояние другого сегмента. Повторитель действует на электрическом уровне для соединения двух сегментов. Повторители ничего распознают сетевые адреса и поэтому не могут использоваться для уменьшения трафика.</p>
+<div style="text-align: center"><img src="repeater" /></div>
+<p><span style=\"color:blue\">Коммутаторы (Switch)</span> – управляемые программным обеспечением центральные устройства кабельной системы, сокращающие сетевой трафик за счет того, что пришедший пакет анализируется для выяснения адреса его получателя и соответственно передается только ему.</p>
+<div style="text-align: center"><img src="sw" /></div>
+<p>Использование коммутаторов является более дорогим, но и более производительным решением. Коммутатор обычно значительно более сложное устройство и может обслуживать одновременно несколько запросов. Если по какой-то причине нужный порт в данный момент времени занят, то пакет помещается в буферную память коммутатора, где и дожидается своей очереди. Построенные с помощью коммутаторов сети могут охватывать несколько сотен машин и иметь протяженность в несколько километров.</p>
+<p><span style=\"color:blue\">Маршрутизаторы (Router)</span> – стандартные устройства сети, работающие на сетевом уровне и позволяющее переадресовывать и маршрутизировать пакеты из одной сети в другую, а также фильтровать широковещательные сообщения.</p>
+<div style="text-align: center"><img src="router" /></div>
+<p><span style=\"color:blue\">Мосты (Bridge)</span> – устройства сети, которое соединяют два отдельных сегмента, ограниченных своей физической длиной, и передают трафик между ними. Мосты также усиливают и конвертируют сигналы для кабеля другого типа. Это позволяет расширить максимальный размер сети, одновременно не нарушая ограничений на максимальную длину кабеля, количество подключенных устройств или количество повторителей на сетевой сегмент.</p>
+<div style="text-align: center"><img src="bridge" /></div>
+<p><span style=\"color:blue\">Шлюзы (Gateway)</span> – программно-аппаратные комплексы, соединяющие разнородные сети или сетевые устройства. Шлюзы позволяют решать проблемы различия протоколов или систем адресации. Они действует на сеансовом, представительском и прикладном уровнях модели OSI.</p>
+<div style="text-align: center"><img src="gateway" /></div>
+<p><span style=\"color:blue\">Мультиплексоры</span> – это устройства центрального офиса, которое поддерживают несколько сотен цифровых абонентских линий. Мультиплексоры посылают и получают абонентские данные по телефонным линиям, концентрируя весь трафик в одном высокоскоростном канале для передачи в Internet или в сеть компании.</p>
+<div style="text-align: center"><img src="multiplexers" /></div>
+<p><span style=\"color:blue\">Межсетевые экраны (firewall, брандмауэры)</span> – сетевые устройства, реализующие контроль за поступающей в локальную сеть и выходящей из нее информацией и обеспечивающие защиту локальной сети посредством фильтрации информации. Большинство межсетевых экранов построено на классических моделях разграничения доступа, согласно которым субъекту (пользователю, программе, процессу или сетевому пакету) разрешается или запрещается доступ к какому-либо объекту (файлу или узлу сети) при предъявлении некоторого уникального, присущего только этому субъекту, элемента. В большинстве случаев этим элементом является пароль. В других случаях таким уникальным элементом является микропроцессорные карточки, биометрические характеристики пользователя и т. п. Для сетевого пакета таким элементом являются адреса или флаги, находящиеся в заголовке пакета, а также некоторые другие параметры.</p>
+<div style="text-align: center"><img src="firewall" /></div>
+]]>
+        </string>
+    <string name="TCP_UDP">
+        <![CDATA[
+<p><span style=\"color:blue\">7</span> <span style=\"color:red\">(TCP,UDP)</span>  - протокол ECHO - предназначен для тестирования связи путём отправки данных на сервер и получения от него их же в неизменном виде;
+<p><span style=\"color:blue\">9</span> <span style=\"color:red\">(TCP,UDP)</span>  - протокол DISCARD - предназначен для тестирования связи путём отправки данных на сервер, который отбрасывает принятое, не отправляя никакого ответа;
+<p><span style=\"color:blue\">20</span> <span style=\"color:red\">(TCP)</span>  - протокол FTP - данные;
+<p><span style=\"color:blue\">21</span> <span style=\"color:red\">(TCP)</span>  - протокол FTP - команды;
+<p><span style=\"color:blue\">22</span> <span style=\"color:red\">(TCP,UDP)</span>  - протокол SSH (Secure SHell) - применяется для безопасного входа в систему, пересылки файлов (SCP, SFTP) и форвардинга;
+<p><span style=\"color:blue\">23</span> <span style=\"color:red\">(TCP,UDP)</span>  - протокол Telnet - применяется для передачи текстовых сообщений в незашифрованном виде;
+<p><span style=\"color:blue\">25</span> <span style=\"color:red\">(TCP,UDP)</span>  - протокол SMTP (Simple Mail Transfer Protocol) - используется для пересылки почтовых сообщений между серверами. Сообщения отправляются в виде простого незашифрованного текста;
+<p><span style=\"color:blue\">53</span> <span style=\"color:red\">(TCP,UDP)</span>  - cлужбы доменных имён (такие как BIND);
+<p><span style=\"color:blue\">67</span> <span style=\"color:red\">(TCP,UDP)</span>  - Bootstrap Protocol (BOOTP) сервер BOOTP - предназначен для сервера, с которого выполняется загрузка бездисковых рабочих станций; также используется Dynamic Host Configuration Protocol (DHCP);
+<p><span style=\"color:blue\">68</span> <span style=\"color:red\">(TCP,UDP)</span>  - Bootstrap Protocol (BOOTP) клиент BOOTP - по этому протоколу выполняется загрузка бездисковых рабочих станций с сервера BOOTP; также используется Dynamic Host Configuration Protocol (DHCP);
+<p><span style=\"color:blue\">69</span> <span style=\"color:red\">(TCP,UDP)</span>  - простой протокол передачи файлов (Trivial File Transfer Protocol, TFTP);
+<p><span style=\"color:blue\">80</span> <span style=\"color:red\">(TCP,UDP)</span>  - протокол передачи гипертекста (HyperText Transfer Protocol, HTTP) для служб всемирной паутины (World Wide Web, WWW);
+<p><span style=\"color:blue\">110</span> <span style=\"color:red\">(TCP,UDP)</span>  - POP3 (Post Office Protocol Version 3);
+<p><span style=\"color:blue\">123</span> <span style=\"color:red\">(TCP,UDP)</span>  - сетевой протокол времени (Network Time Protocol, NTP);
+<p><span style=\"color:blue\">143</span> <span style=\"color:red\">(TCP,UDP)</span>  - Internet Message Access Protocol (IMAP) - используется для получения, организации и синхронизации сообщений e-mail;
+<p><span style=\"color:blue\">161</span> <span style=\"color:red\">(TCP,UDP)</span>  - простой протокол управления сетью (Simple Network Management Protocol, SNMP);
+<p><span style=\"color:blue\">443</span> <span style=\"color:red\">(TCP,UDP)</span>  - HTTPS (Hypertext Transfer Protocol Secure) - HTTP с шифрованием по SSL или TLS;
+<p><span style=\"color:blue\">993</span> <span style=\"color:red\">(TCP)</span>  - IMAPS (Internet Message Access Protocol с шифрованием по SSL или TLS);
+<p><span style=\"color:blue\">995</span> <span style=\"color:red\">(TCP)</span>  - POP 3 с шифрованием по SSL (POP3S);
+<p><span style=\"color:blue\">3389</span> <span style=\"color:red\">(TCP,UDP)</span>  - RDP - протокол удалённого рабочего стола;
+<p><span style=\"color:blue\">8080</span> <span style=\"color:red\">(TCP,UDP)</span>  - альтернативный порт HTTP;
+<p><span style=\"color:blue\">33434</span> <span style=\"color:red\">(TCP,UDP)</span>  - cредство трассировки сети Traceroute;
 ]]>
         </string>
 
