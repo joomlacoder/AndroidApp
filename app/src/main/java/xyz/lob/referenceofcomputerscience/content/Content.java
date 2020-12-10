@@ -30,7 +30,7 @@ public class Content {
             this.title = title;
         }
 
-        public String getTitle(){
+        public String getTitle() {
             return title;
         }
 
@@ -47,22 +47,30 @@ public class Content {
         }
     }
 
-    public List<Post> getAllPost(){
+    public List<Post> getBySearch(String query) {
+        List<Post> allPost = getAllPost();
+        posts = allPost.stream().filter(post -> {
+            return (post.getTitle().toLowerCase().contains(query.toLowerCase()) || post.getContent().toLowerCase().contains(query.toLowerCase()));
+        }).collect(Collectors.toList());
+        return posts;
+    }
+
+    public List<Post> getAllPost() {
         List<Post> allPost = new ArrayList<>();
-        for(Category cat : Category.values())
+        for (Category cat : Category.values())
             allPost.addAll(makeCategory(cat.title));
         posts.clear();
         posts.addAll(allPost);
         return allPost;
     }
 
-    public List<Post> getForevers(){
+    public List<Post> getForevers() {
         List<Post> allPost = getAllPost();
         posts = allPost.stream().filter(post -> App.getInstance().getForevers().contains(post.getTitle())).collect(Collectors.toList());
         return posts;
     }
 
-    public Post getPost(String title){
+    public Post getPost(String title) {
         Post post = null;
         for (Post post1 : posts) {
             if (post1.getTitle().equals(title))

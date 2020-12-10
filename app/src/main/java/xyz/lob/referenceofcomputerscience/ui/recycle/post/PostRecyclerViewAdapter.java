@@ -2,7 +2,6 @@ package xyz.lob.referenceofcomputerscience.ui.recycle.post;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,7 +71,6 @@ public class PostRecyclerViewAdapter extends RecyclerView.Adapter<PostRecyclerVi
             titleView.setText(post.getTitle());
             imageView.setImageDrawable(post.getImg());
             detaleView.setText(post.getDetails());
-            Log.e("eeeeeeeeeeeeee", post.getForever().toString());
         }
 
         @NotNull

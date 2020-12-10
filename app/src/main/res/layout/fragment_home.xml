@@ -8,8 +8,10 @@
 
     tools:context=".fragment.home.HomeFragment">
 
-    <SearchView android:layout_height="wrap_content"
-        android:layout_width="match_parent" >
+    <SearchView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     </SearchView>
 
@@ -22,7 +24,15 @@
         android:text="Можете посмотреть"
         android:textSize="18sp" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchRC"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        tools:visibility="gone" />
+
     <ScrollView
+        android:id="@+id/scrollhomeMenu"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="20">
