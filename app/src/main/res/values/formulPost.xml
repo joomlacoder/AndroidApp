@@ -22,10 +22,10 @@
     </string-array>
 
     <array name="formulPostImg">
-        <item>@drawable/fon</item>
-        <item>@drawable/fon</item>
-        <item>@drawable/fon</item>
-        <item>@drawable/fon</item>
+        <item>@drawable/one</item>
+        <item>@drawable/two</item>
+        <item>@drawable/three</item>
+        <item>@drawable/four</item>
     </array>
 
     <array name="formulPosts">
