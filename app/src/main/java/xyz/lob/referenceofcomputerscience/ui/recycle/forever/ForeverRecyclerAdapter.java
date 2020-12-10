@@ -58,6 +58,7 @@ public class ForeverRecyclerAdapter extends RecyclerView.Adapter<ForeverRecycler
         public final TextView titleView;
         public final ImageView imageView;
 
+
         public ViewHolder(@NonNull View view) {
             super(view);
             this.view = view;
