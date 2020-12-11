@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spanned;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,12 +46,24 @@ public class ScrollingFragment extends Fragment {
 
         Spanned textSpan = Html.fromHtml(post.getText(), HtmlCompat.FROM_HTML_MODE_LEGACY, source -> {
             Drawable drawFromPath;
-            int path =
-                    getActivity().getResources().getIdentifier(source, "drawable",
-                            getActivity().getApplicationContext().getPackageName());
-            drawFromPath = getActivity().getResources().getDrawable(path, getContext().getTheme());
+            int path = getResources().getIdentifier(source, "drawable", getActivity().getApplicationContext().getPackageName());
+            Log.e("src", path + " " + source);
+
+            drawFromPath = getResources().getDrawable(path, getContext().getTheme());
             drawFromPath.setBounds(0, 0, drawFromPath.getIntrinsicWidth(),
                     drawFromPath.getIntrinsicHeight());
+
+            int widthScreen = getActivity().getWindowManager().getDefaultDisplay().getWidth()-100;
+            int width = drawFromPath.getIntrinsicWidth();
+            int height = drawFromPath.getIntrinsicHeight();
+            if (width > widthScreen){
+                float sc = (float)widthScreen/width;
+                height = (int) (height * sc);
+                drawFromPath.setBounds(
+                    0, 0,
+                    widthScreen,
+                    height);
+            }
             return drawFromPath;
         }, null);
 
